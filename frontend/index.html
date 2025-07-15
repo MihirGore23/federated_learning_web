@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federated Learning - Tumor Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.15.0/dist/tf.min.js"></script>\
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Federated Learning for Tumor Detection</h1>
+            <p>Rural Healthcare Centers - Collaborative AI Training</p>
+        </header>
+
+        <div class="card">
+            <h2 class="center-title"> Training Status</h2>
+            <div class="status-indicator">
+                <div id="status-dot" class="status-dot"></div>
+                <span id="status-text">Ready to start</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="center-title"> Dataset Upload</h2>
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="file-input" multiple accept="image/*" hidden>
+                <div class="upload-content">
+                    <div class="upload-icon"></div>
+                    <p>Click to upload tumor images</p>
+                    <p class="upload-hint">Supports JPEG, PNG formats</p>
+                </div>
+            </div>
+            <div id="file-count" class="file-count"></div>
+        </div>
+
+        <div class="card">
+            <h2 class="center-title"> Training Progress</h2>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="progress-percent">0%</span>
+                    <span id="epoch-text">Epoch 0/5</span>
+                </div>
+            </div>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="metric-label">Accuracy:</span>
+                    <span id="accuracy">0.00%</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Loss:</span>
+                    <span id="loss">0.0000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="center-title">Validation Results</h2>
+            <div class="global-metrics">
+                <div class="metric">
+                    <span class="metric-label">Final Validation Accuracy:</span>
+                    <span id="final-validation-accuracy">Not available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="train-btn" class="btn btn-primary">
+                 Start Local Training
+            </button>
+        </div>
+
+        <div class="logs">
+            <h3 class="center-title"> Activity Log</h3>
+            <div id="log-container" class="log-container"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
